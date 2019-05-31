@@ -1,3 +1,4 @@
+http://www.pythonchallenge.com/pc/def/ocr.html
 ### 给定一个字符串，将每个字母往后移两个，组成一个新的字符串
 例如K--> M ;O --> Q;E --> G
 
