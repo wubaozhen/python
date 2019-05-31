@@ -33,10 +33,5 @@ print(text_translate)
 >>>chr(100)
 'd'
 
-官方答案：
-import string
-l = string.lowercase
-t = string.maketrans(l,l[2:] + l[:2])
-print(text.translate(t))
-我执行时会报错：lowercase maketrans 这些属性string都没有，待研究
+
 
