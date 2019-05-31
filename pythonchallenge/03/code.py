@@ -1,3 +1,4 @@
+http://www.pythonchallenge.com/pc/def/equality.html
 #### 从一大串字符里找到出现次数最少的几个字符
 ### 知识点：正则表达式提取字符串；list计数；条件语句
 
