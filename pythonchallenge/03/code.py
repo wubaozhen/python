@@ -16,3 +16,7 @@ text = ''.join(text).replace('\n','')
 patt = re.compile(r'[a-z]+[A-Z]{3}([a-z]{1})[A-Z]{3}[a-z]+')
 ret = patt.findall(text)
 print(ret)
+
+备注：
+to line12:最后的参数re.S 必须要，re.S的意思是正则表达式会将这个字符串作为一个整体，将“\n”当做一个普通的字符加入到这个字符串中，在整体中进行匹配。
+    如果去掉了re.S,那么匹配到的是个[]
