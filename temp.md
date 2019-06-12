@@ -1,34 +1,48 @@
 import datetime
 import time
 
-def cache(s,curr_time = datetime.datetime.now(),times=1):
+def cache(s,curr_time = datetime.datetime.now()):
     def _cache(fn):
         def wrap(a,b):
-            if times == 1:
+            with open('result.txt','r') as fr:
+                content = fr.read()
+            if not content:
                 ret = fn(a,b)
-                times += 1
-                start_time = datetime.datetime.now()
+                with open('result.txt', 'w+') as fr:
+                    fr.write(str(ret))
+                time = datetime.datetime.now().strftime( '%Y-%m-%d %H:%M:%S')
+                with open('time.txt', 'w+') as ft:
+                    ft.write(time)
+                return ret
             else:
-                if (curr_time - start_time).total_seconds() < s:
-                    return ret
+                with open('time.txt', 'r') as ft:
+                    content_time = ft.read()
+
+                delta = curr_time - datetime.datetime.strptime(content_time,'%Y-%m-%d %H:%M:%S')
+                delta_s = delta.seconds
+
+                if delta_s < s:
+                    with open('result.txt', 'r') as fr:
+                        content = fr.read()
+                        return content
                 else:
                     ret = fn(a,b)
-                    start_time = datetime.datetime.now()
+                    with open('result.txt', 'w+') as fr:
+                        fr.write(str(ret))
                     return ret
-
         return wrap
     return _cache
 
-@cache(60)
+@cache(3)
 def add(a,b):
-    time.sleep(2)
     return a+b
 
-#print(add(2,2))
-print(add(4,1))
+
+print(add(4,7))
 
 
 
-#时间没弄好
 
-第一次需要执行fn(a,b),第二次的时候就要判断时间，可执行（返回新结果）可不执行（返回上一次结果）
+
+
+
