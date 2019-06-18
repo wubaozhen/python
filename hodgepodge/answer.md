@@ -32,7 +32,7 @@ while i < 9876543:
         i2 = i * 2
         i3 = i * 3
         i6 = i * 6
-        if isSeven(i2,i3,i6):
+        if isSeven(i2,i3,i6) and isDiff(i2) and isDiff(i3) and isDiff(i6):
             print(i)
     i += 1
     
