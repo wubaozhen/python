@@ -24,3 +24,17 @@ def Fun(n):
 
 print(Fun(5))
 ```
+# 对列表我们知道用切片来取若干元素，对生成器对象呢？
+```
+from itertools import  islice
+
+gen = iter(range(10))  # gen是一个生成器
+
+for i in islice(gen,0,4): # 第二个参数为起始位置，第三个参数为结束位置，无负数索引
+    print(i)
+ ```
+ 输出
+ 0
+ 1
+ 2
+ 3
