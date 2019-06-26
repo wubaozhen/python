@@ -15,7 +15,7 @@ def Fun(n):
 
 print(Fun(5))
 
-#普通：
+# 普通：
 def Fun(n):
     ret = 1
     for i in range(n,0,-1):
