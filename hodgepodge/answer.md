@@ -134,5 +134,7 @@ output_avg(L)
 output_notpass(L)
 output_good(L)
     
-    
+注：
+1.写程序前先想好代码执行后长什么样子
+2.借鉴参考答案，只执行一次打开文件，传参
   ```
