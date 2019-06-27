@@ -49,4 +49,11 @@ for i in islice(gen,0,4): # 第二个参数为起始位置，第三个参数为�
     val = False
  # 改成三元运算符后 val = True if a > b else False
  
+ # lambda map 
+>>>a = [('a',1),('b',2),('c',3),('d',4)]
+>>>a_1 = list(map(lambda x:x[0],a))
+>>>a_1
+>>>['a', 'b', 'c', 'd']
+
+ 
  ```
