@@ -32,9 +32,21 @@ gen = iter(range(10))  # gen是一个生成器
 
 for i in islice(gen,0,4): # 第二个参数为起始位置，第三个参数为结束位置，无负数索引
     print(i)
- ```
+
  输出
  0
  1
  2
  3
+ # 现在不推荐使用filter,map 因为用列表生成式也能完成
+ # 三元运算符  形式为： val = 1 if 条件成立 else 2
+ a = 2
+ b = 5
+ # 普通写法
+ if a > b:
+    val = True
+ else:
+    val = False
+ # 改成三元运算符后 val = True if a > b else False
+ 
+ ```
