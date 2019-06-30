@@ -65,4 +65,9 @@ t = [1,2]
 print(add(*t)）  # *t
 
 输出：3
+
+# next用法
+with open('score.txt','r',encoding='utf-8') as src:
+    next(src) # 相当于del sc[0],删除文件的第一行
+    sc = src.readlines()  # 列表
 ```
