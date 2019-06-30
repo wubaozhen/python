@@ -137,4 +137,55 @@ output_good(L)
 注：
 1.写程序前先想好代码执行后长什么样子
 2.借鉴参考答案，只执行一次打开文件，传参
+
+# 3. 当前目录下有一个文件名为score.txt的文本文件，存放着计算机课成绩。共有学号、总评成绩两列，请查找最高分和最低分的学生，并在屏幕上显示其学号和成绩
+
+# 我的答案：
+def res(L):
+    temp_L = []
+    for line in L:
+        temp = int(line.strip().split()[1])  # 获取分数
+        temp_L.append(temp)  # 把分数存到列表
+
+    max_res = max(temp_L)
+    min_res = min(temp_L)
+
+    for line in L:
+        if str(max_res) in line:
+            print('最高分的学号和成绩为：',line)
+            break
+    for line in L:
+        if str(min_res) in line:
+            print('最低分的学号和成绩为：',line)
+            break
+
+with open('score.txt','r') as f:
+    L = f.readlines()
+    del L[0]  # 删掉标题
+
+res(L)
+
+# 参考答案：
+with open('score.txt','r',encoding='utf-8') as src:
+    next(src)   # 这行代码的意思相当于去掉了标题行，src是个可迭代对象，有__next__()方法
+    sc = src.readlines()
+def max_min(sc):
+        num1 = ''
+        num2 = ''
+        max = 0
+        min = 100
+        for line in sc:
+            ll = line.strip().split()
+            if int(ll[1]) >= max:
+                max = int(ll[1])
+                num1 = ll[0]
+            if int(ll[1]) <= min:
+                min = int(ll[1])
+                num2 = ll[0]
+        print(num1,max)
+        print(num2,min)
+
+ max_min(sc)
+
+
   ```
