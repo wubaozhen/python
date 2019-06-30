@@ -73,3 +73,11 @@ with open('score.txt','r',encoding='utf-8') as src:
     next(src) # 相当于del sc[0],删除文件的第一行
     sc = src.readlines()  # 列表
 ```
+# while -- print -- input
+```
+a = 0
+while a<5:
+    print('请选择功能：\n1:输入\n2:查找\n3:退出')  # \n在字符串里是实现换行
+    c = input()  # 直接接收输入，无提示
+    a += 2
+```
