@@ -87,3 +87,27 @@ while True:
     else:
         print('输入有误')
 ```
+# while try except else
+```
+写一个函数，接收用户输入的2个整数，求和
+def add():
+    while True:
+        try:
+            x = int(input('x='))
+        except ValueError:
+            print('输入的内容必须为整数，请重新输入！')
+        else:    # else代表没走except
+            break
+        
+    while True:
+        try:
+            y = int(input('y='))
+        except ValueError:
+            print('输入的内容必须为整数，请重新输入！')
+        else:
+            break
+
+    print('x+y=',x+y)
+
+add()
+```
