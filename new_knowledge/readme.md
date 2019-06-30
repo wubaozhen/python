@@ -75,9 +75,15 @@ with open('score.txt','r',encoding='utf-8') as src:
 ```
 # while -- print -- input
 ```
-a = 0
-while a<5:
+while True:
     print('请选择功能：\n1:输入\n2:查找\n3:退出')  # \n在字符串里是实现换行
     c = input()  # 直接接收输入，无提示
-    a += 2
+    if c == '1':
+        add_dic()
+    elif c == '2':
+        search_dic()
+    elif c == '3':
+        break
+    else:
+        print('输入有误')
 ```
