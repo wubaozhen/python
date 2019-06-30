@@ -186,6 +186,45 @@ def max_min(sc):
         print(num2,min)
 
  max_min(sc)
+ 
+# 记录新学的英文单词和其中文翻译，所有设计一个添加单词函数，一个查找单词函数
+d = {}
+def add_dic():
+    while True:
+        print('按回车则退出添加！')
+        word = input('今天新学的单词为：')
+        if len(word) == 0:   # 即直接按回车
+            break
+        d[word] = input('其中文意思为：')
+        print('该单词已添加到字典库')
+
+def search_dic():
+    while True:
+        print('按回车则退出查找！')
+        word = input('今天新学的单词为：')
+        if len(word) == 0:
+            break
+        if word in d:
+            print('这个单词已存在')
+            print('%s的中文意思为:%s' % (word,d[word]))
+        else:
+            print('这是个新单词，将加入到字典库中')
+            d[word] = input('其中文意思为：')
+
+while True:
+    print('请选择功能：\n1:输入\n2:查找\n3:退出')  # \n在字符串里是实现换行
+    c = input()  # 直接接收输入，无提示
+    if c == '1':
+        add_dic()
+    elif c == '2':
+        search_dic()
+    elif c == '3':
+        break
+    else:
+        print('输入有误')
+        
+   
+
 
 
   ```
