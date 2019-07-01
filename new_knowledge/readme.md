@@ -142,4 +142,10 @@ def slice():
             print(l[i],end='')
 
 slice()
+
+# for ... else ...  :如果for 迭代到最后一个了，才会走else 从句。
+目前else有三种用途：
+if ... else...  : 不满足if 条件，走 else
+try ... except ... else ...  : 不走except就走else ，走了except就不走else
+for ... else ... :for 循环到最后了，走else
 ```
