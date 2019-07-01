@@ -1,5 +1,6 @@
-# 写一个函数，传入一个参数n,返回n的阶乘
 ```
+# 写一个函数，传入一个参数n,返回n的阶乘
+
 # 高阶函数：
 from functools import reduce
 
@@ -23,9 +24,9 @@ def Fun(n):
     return ret
 
 print(Fun(5))
-```
+
 # 对列表我们知道用切片来取若干元素，对生成器对象呢？
-```
+
 from itertools import  islice
 
 gen = iter(range(10))  # gen是一个生成器
@@ -56,9 +57,9 @@ for i in islice(gen,0,4): # 第二个参数为起始位置，第三个参数为�
 >>>['a', 'b', 'c', 'd']
 
  
- ```
+
 # 实参解包
-```
+
 def add(x,y):
    return x + y
 t = [1,2]
@@ -66,15 +67,15 @@ print(add(*t)）  # *t
 
 输出：3
 
-```
+
 # next用法
-```
+
 with open('score.txt','r',encoding='utf-8') as src:
     next(src) # 相当于del sc[0],删除文件的第一行
     sc = src.readlines()  # 列表
-```
+
 # while -- print -- input
-```
+
 while True:
     print('请选择功能：\n1:输入\n2:查找\n3:退出')  # \n在字符串里是实现换行
     c = input()  # 直接接收输入，无提示
@@ -86,9 +87,9 @@ while True:
         break
     else:
         print('输入有误')
-```
+
 # while try except else
-```
+
 写一个函数，接收用户输入的2个整数，求和
 def add():
     while True:
@@ -110,4 +111,35 @@ def add():
     print('x+y=',x+y)
 
 add()
+
+# eval() ：函数用来执行一个字符串表达式，并返回表达式的值。 简单理解就是去掉引号，返回引号内的内容
+>>>x = 7
+>>> eval( '3 * x' )
+21
+>>> eval('pow(2,2)')
+4
+例子：写一个函数，实现列表的切片功能，例如用户输入[1,2,3,4,5,6]和2,5,程序输出[3,4,5,6]
+#参考代码
+def slice():
+    l = input('请输入一个列表：')
+    l = eval(l)
+    start,end = eval(input('pls input start position and end position:'))
+    print(l[start:end+1])
+
+slice()
+输出：
+E:\python3.6.5\python.exe D:/dongshiwei/power_on_sequence3.0/config/3.py
+请输入一个列表：[1,2,3,4,5,6]
+pls input start position and end position:2,5
+[3, 4, 5, 6]
+
+# 我的答案：
+def slice():
+    l = [int(i) for i in input('请输入一个列表:').split(',')]  # 得到一个整数列表
+    n1,n2 = [int(i) for i in input('请输入2个整数作为起始和结束下标:').split(',')]  # 得到2个整数下标
+    for i in range(len(l)):
+        if  n1 <= i <= n2:
+            print(l[i],end='')
+
+slice()
 ```
