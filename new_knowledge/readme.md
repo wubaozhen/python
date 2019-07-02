@@ -147,5 +147,11 @@ slice()
 目前else有三种用途：
 if ... else...  : 不满足if 条件，走 else
 try ... except ... else ...  : 不走except就走else ，走了except就不走else
-for ... else ... :for 循环到最后了，走else
+for ... else ... :for 循环到最后了，走else# 
+
+# 两种不同方法计算100以内所有奇数的和
+x = [i for i in range(1,100) if i%2]
+print(sum(x))
+-------------------------------
+print(sum(range(1,100)[::2])
 ```
