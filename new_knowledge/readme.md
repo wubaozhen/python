@@ -154,4 +154,19 @@ x = [i for i in range(1,100) if i%2]
 print(sum(x))
 -------------------------------
 print(sum(range(1,100)[::2])
+
+# 获取时间并转换为易读格式 
+用到的模块time中的strftime, localtime
+import time
+from time import strftime,localtime
+
+print(strftime('%Y-%m-%d %H:%M:%S',localtime()))
+time.sleep(1)
+print(strftime('%Y-%m-%d %H:%M:%S',localtime(time.time())))
+
+输出：
+2019-07-15 11:38:36
+2019-07-15 11:38:37
+
+
 ```
