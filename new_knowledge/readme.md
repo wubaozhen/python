@@ -168,5 +168,31 @@ print(strftime('%Y-%m-%d %H:%M:%S',localtime(time.time())))
 2019-07-15 11:38:36
 2019-07-15 11:38:37
 
+# 给定下面数据，用一行代码和多行代码实现预期的结果
+attributes = ['name', 'dob', 'gender']
+values = [['jason', '2000-01-01', 'male'],
+['mike', '1999-01-01', 'male'],
+['nancy', '2001-02-01', 'female']
+]
+
+# expected outout:
+# [{'name': 'jason', 'dob': '2000-01-01', 'gender': 'male'},
+# {'name': 'mike', 'dob': '1999-01-01', 'gender': 'male'},
+# {'name': 'nancy', 'dob': '2001-02-01', 'gender': 'female'}]
+
+# 我的答案--多行代码：
+l = []
+d = {}
+for val in values:
+    d = dict(zip(attributes,val))
+    l.append(d)
+
+print(l)
+
+# 我的答案-- 一行代码
+print([dict(zip(attributes,val)) for val in values])
+
+思路：
+1.利用zip(seq1,seq2)能将两序列对应位置凑成一对，因values是嵌套结构，所以用个for遍历
 
 ```
