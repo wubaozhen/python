@@ -25,6 +25,46 @@ def Fun(n):
 
 print(Fun(5))
 
+# 提问：求1+2!+3!+...+20!的和
+
+#递归
+def fun(n):
+    if n == 1:
+        return 1
+    return  n*fun(n-1)
+
+s = 0
+for i in range(1,21):
+    s += fun(i)
+
+print(s)
+
+注：用map()函数求和
+# map(function, iterable, ...)
+# 第一个参数 function 以参数序列中的每一个元素调用 function 函数，返回包含每次 function 函数返回值的新列表。
+print(sum(map(fun,range(1,21))))
+
+#循环
+s = 0
+l = range(1,21)
+def op(x):
+    r = 1
+    for i in range(1,x+1):
+        r *= i
+    return r
+
+s= sum(map(op,l))
+print('1! + 2! + 3! +... + 20! = %d' % s)
+
+# 常规
+s = 0
+t = 1
+for n in range(1,21):
+    t *= n
+    s += t
+
+print(s)
+
 # 对列表我们知道用切片来取若干元素，对生成器对象呢？
 
 from itertools import  islice
