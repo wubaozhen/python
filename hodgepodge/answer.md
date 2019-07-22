@@ -248,9 +248,32 @@ for i in range(3,0,-1):
      ***
       *
 
-        
+# 问题简述：有一分数序列：2/1，3/2，5/3，8/5，13/8，21/13
+要求：求出这个数列的前20项之和。       
    
+我的答案：
+s = 0
+a = 2
+b = 1
+for i in range(20):  # 循环20次
+    c = a/b
+    s = s + c
+    a,b = (a+b),a  #两数交换
 
+print(s)
 
+# reduce
+from functools import  reduce
+l = []
+a = 2
+b = 1
+for i in range(20):
+    l.append(a/b)
+    a,b = a+b,a
+print(reduce(lambda x,y:x+y,l))
+
+注：
+1.引入reduce就省了一个变量
+2.简单的计算无需多加个变量c
 
   ```
