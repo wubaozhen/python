@@ -44,6 +44,18 @@ print(s)
 # 第一个参数 function 以参数序列中的每一个元素调用 function 函数，返回包含每次 function 函数返回值的新列表。
 print(sum(map(fun,range(1,21))))
 
+# 递归规范版
+def fact(j):
+    sum = 0
+    if j == 0:
+        sum = 1
+    else:
+        sum = j * fact(j-1)
+    return sum
+
+for i in range(5):
+    print('%d! = %d' % (i,fact(i)))
+
 #循环
 s = 0
 l = range(1,21)
