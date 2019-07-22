@@ -223,6 +223,32 @@ while True:
     else:
         print('输入有误')
         
+  # 输出菱形图案
+  #i控制行，j控制空格格式，k控制*个数
+for i in range(1,5):
+    for j in range(7,i,-1):
+        print(' ',end='')
+    for k in range(0,i*2-1):
+        print('*',end='')
+    print()
+
+for i in range(3,0,-1):
+    for k in range(7,i,-1):
+        print(' ',end='')
+    for j in range(i*2-1,0,-1):
+        print('*',end='')
+    print()
+   
+  输出:
+      *
+     ***
+    *****
+   *******
+    *****
+     ***
+      *
+
+        
    
 
 
