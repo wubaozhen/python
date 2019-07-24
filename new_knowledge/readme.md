@@ -247,4 +247,26 @@ print([dict(zip(attributes,val)) for val in values])
 思路：
 1.利用zip(seq1,seq2)能将两序列对应位置凑成一对，因values是嵌套结构，所以用个for遍历
 
+# 输出一个二维数组，三行三列
+
+L = []
+for i in range(3):
+    L.append([])
+    for j in range(3):
+        n = int(input('pls input a num:\n'))
+        L[i].append(n)
+
+# 求二维数组对角线的和
+sum = 0
+for i in range(3):
+    sum += L[i][i]
+
+print(L)
+print(sum)
+
+输出：
+[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+15
+
+
 ```
