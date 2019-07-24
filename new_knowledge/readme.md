@@ -274,4 +274,21 @@ L = [1,2,3]
 L1 = L[0:]
 print(L1)
 [1,2,3]
+
+# 实现列表insert方法,设定索引为i,要插入的值为n
+
+i = 4
+n = 99
+L = [1,2,3,6,8,5,4,53,3,5,2,1]
+
+for inx in range(len(L)):
+    if inx == i:
+        temp1 = L[i]
+        L[i] = n
+        for j in range(i+1,len(L)):
+            temp2 = L[j]
+            L[j] = temp1
+            temp1 = temp2
+print(L)
+[1, 2, 3, 6, 99, 8, 5, 4, 53, 3, 5, 2]
 ```
