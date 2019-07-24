@@ -275,7 +275,7 @@ L1 = L[0:]
 print(L1)
 [1,2,3]
 
-# 实现列表insert方法,设定索引为i,要插入的值为n
+# 实现列表insert()方法,设定索引为i,要插入的值为n
 
 i = 4
 n = 99
@@ -291,4 +291,13 @@ for inx in range(len(L)):
             temp1 = temp2
 print(L)
 [1, 2, 3, 6, 99, 8, 5, 4, 53, 3, 5, 2]
+
+# 实现列表的reverse()方法
+a = [99,66,25,10,3]
+ln = int(len(a)/2)
+for i in range(ln):
+    a[i],a[len(a)-1-i] = a[len(a)-1-i],a[i]
+
+print(a)
+[3, 10, 25, 66, 99]
 ```
