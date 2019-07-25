@@ -300,4 +300,22 @@ for i in range(ln):
 
 print(a)
 [3, 10, 25, 66, 99]
+
+# 迭代器
+temp = ['hsjs','askj']
+print(type(temp))
+<class 'list'>
+temp = iter(['sdkjdh','skdjh']) # iter()返回迭代器本身
+print(type(temp))
+<class 'list_iterator'>
+print(next(temp))  # next()返回容器的下一个项目
+sdkjdh
+print(next(temp))
+skdjh
+print(next(temp))
+Traceback (most recent call last):
+  File "<input>", line 1, in <module>
+StopIteration
+
+
 ```
