@@ -318,6 +318,39 @@ Traceback (most recent call last):
 StopIteration
 
 # 实现字典的键对应多个值
+使用原生dict实现的话，需要对值进行初始化的操作
+d = {}
+for key,value in k_v:
+  if key not in d:
+     d[key] = []
+  d[key].append(value)
+  
+如果使用defaultdict的话代码就会更加简洁：
+d = defaultdict(list)
+for key,value in k_v:
+   d[key].append(value)
+   
+ # 如下代码：会打印    print(e)
+NameError: name 'e' is not defined
 
+e = 1
+try:
+    1/0
+except ZeroDivisionError as e:
+    print(e)
+    pass
+print(e)
 
+是因为
+except E as N:
+  foo
+  
+就等于
+except E as N:
+   try:
+       foo
+   finally:
+       del N
+
+阅读官方文档可知,最后会清空N
 ```
