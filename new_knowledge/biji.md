@@ -88,3 +88,22 @@ def 新好运翻倍(self):
 1.修改类属性和类方法，将会影响所有实例
 2.修改某个实例的属性，只会影响这个实例自身
 3.不能修改实例的方法
+
+### print(flush=True) 参数
+
+例子,想实现隔1s打印一个点：
+```
+import time
+print('Loading',end='')
+for i in range(6):
+    print('.',end='')
+    time.sleep(1)
+
+# 上面会一次性打印Loading.....
+
+import time
+print('Loading',end='')
+for i in range(6):
+    print('.',end=''，flush=True)  # 加一个flush=True即可，及时刷新，默认为false
+    time.sleep(1)
+```
