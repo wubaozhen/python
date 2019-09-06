@@ -107,3 +107,4 @@ for i in range(6):
     print('.',end=''，flush=True)  # 加一个flush=True即可，及时刷新，默认为false
     time.sleep(1)
 ```
+### 模块（module）一般是一个文件，而包（package）是一个目录，一个包中可以包含很多个模块，可以说包是“模块打包”组成的。Python中的包都必须默认包含一个init.py的文件。
