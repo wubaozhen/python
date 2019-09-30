@@ -294,3 +294,9 @@ reduce将表中的前两个元素(1和2)传递给lambda函数，得到3。该返
 
 根据mmufhy的提醒： reduce()函数在3.0里面不能直接用的，它被定义在了functools包里面，需要引入包，见评论区。
 ```
+### 异常处理
+流程如下，
+
+try->异常->except->finally
+
+try->无异常->else->finally
