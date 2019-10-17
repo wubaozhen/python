@@ -350,3 +350,26 @@ num = 2
 print(chunk(array,num))
 
 ```
+### globals()的应用
+```
+data1 = '99320,ROME,MALE'
+data2 = '99321,JERRY,MALE'
+data3 = '99322,TIM,MALE'
+MyDict = {}
+for i in range(1, 4):
+    MyDict['id'], MyDict['name'], MyDict['sex'] = globals()['data' + str(i)].split(',')# 如果去掉globals()，程序会报错
+
+    print("ID:   " + MyDict['id'])
+    print("Name: " + MyDict['name'])
+    print("Sex:  " + MyDict['sex'])
+```
+打印
+ID:   99320
+Name: ROME
+Sex:  MALE
+ID:   99321
+Name: JERRY
+Sex:  MALE
+ID:   99322
+Name: TIM
+Sex:  MALE
