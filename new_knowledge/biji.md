@@ -302,3 +302,51 @@ try->异常->except->finally
 try->无异常->else->finally
 
 ### python内置函数int()向下取整，ceil()向上取整。 from math import ceil
+
+### 请使用一句代码，将 [1, 2, 3, 4, 5, 6, 7, 8, 9] 变成 [(1, 2, 3), (4, 5, 6), (7, 8, 9)]:
+```
+答案一： 详见https://fishc.com.cn/thread-140340-1-1.html
+>>> list(zip(*[iter([1, 2, 3, 4, 5, 6, 7, 8, 9])] * 3))
+[(1, 2, 3), (4, 5, 6), (7, 8, 9)]
+
+```
+```
+答案二：
+l = [1,2,3,4,5,6,7,8,9]
+L = list(map(lambda x : tuple(l[x*3:x*3 + 3]),list(range(0,3))))
+print(L)
+[(1, 2, 3), (4, 5, 6), (7, 8, 9)]
+```
+
+### 编写一个 chunk() 函数，将列表分割成指定大小的块。
+例如：
+>>> chunk([1, 2, 3, 4, 5, 6, 7, 8, 9], 2)
+[[1, 2], [3, 4], [5, 6], [7, 8], [9]]
+
+```
+答案一： 详见https://fishc.com.cn/thread-141451-1-1.html
+>>> from math import ceil
+>>> def chunk(lst, size):
+                return list(map(lambda x: lst[x * size : x * size + size], list(range(0, ceil(len(lst) / size)))))
+               
+```
+```
+答案二：
+def chunk(array,num):
+    res = []
+
+    # 确定循环次数
+    lenth = len(array)/num
+    if lenth > int(lenth):
+        lenth = int(lenth) + 1
+    else:
+        lenth = int(lenth)
+
+    for i in range(lenth):
+        res.append(array[num*i:num*(i+1)])
+    return res
+array = [1,2,3,4,5,6,7,8,9]
+num = 2
+print(chunk(array,num))
+
+```
