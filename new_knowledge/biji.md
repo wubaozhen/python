@@ -300,3 +300,5 @@ reduce将表中的前两个元素(1和2)传递给lambda函数，得到3。该返
 try->异常->except->finally
 
 try->无异常->else->finally
+
+### python内置函数int()向下取整，ceil()向上取整。 from math import ceil
