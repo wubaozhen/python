@@ -13,3 +13,15 @@
 f = funx(2)(3)
 print(f)
 ```
+
+# while condition  ---> input  if  else 结构，用于一直循环，输入什么时候退出的场景
+
+```
+q = True
+while q:
+    num = input("请输入数字(输入Q退出)： ")
+    if num != Q:
+        
+    else:
+        q = False
+```
