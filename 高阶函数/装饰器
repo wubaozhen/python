@@ -1,0 +1,18 @@
+# 装饰器的作用是原函数的功能不变，调用的时候附加了其他功能
+def outer(func):
+    def inner():
+        print('Before func()...')
+        func()
+        print('After func()...')
+    return inner
+
+def hi():
+    print('Hi World')
+    
+h = outer(hi)
+h()
+
+# 输出
+Before func()...
+Hi World
+After func()...
