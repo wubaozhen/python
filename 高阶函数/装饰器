@@ -9,7 +9,7 @@ def outer(func):
 def hi():
     print('Hi World')
     
-h = outer(hi)
+h = outer(hi)    # 等同于 @outer
 h()
 
 # 输出
