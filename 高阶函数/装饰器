@@ -1,3 +1,8 @@
+#  装饰器介绍 参考 https://www.dusaiphoto.com/article/73/
+# 装饰器是闭包的一种应用
+
+
+
 # 装饰器的作用是原函数的功能不变，调用的时候附加了其他功能
 def outer(func):
     def inner():
