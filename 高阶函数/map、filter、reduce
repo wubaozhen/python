@@ -1,1 +1,10 @@
 
+print(list(filter(lambda x: x > 1, [1, 2, 3, 4, 5])))    # 返回一个迭代器
+
+print(list(map(lambda x: x * 2, [1, 2, 3, 4])))   # 返回一个迭代器
+
+from functools import reduce
+
+print(reduce(lambda x, y: x + y, [1, 2, 3, 4],10))  #  返回一个值
+
+
