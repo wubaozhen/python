@@ -1,0 +1,23 @@
+参考 https://zhuanlan.zhihu.com/p/88402677
+
+
+鸭子类型是动态类型的一种风格。在这种风格中，一个对象有效的语义，不是由继承自特定的类或实现特定的接口，而是由"当前方法和属性的集合"决定。这个概念的名字来源于由James Whitcomb Riley提出的鸭子测试，“鸭子测试”可以这样表述：“当看到一只鸟走起来像鸭子、游泳起来像鸭子、叫起来也像鸭子，那么这只鸟就可以被称为鸭子。”
+
+
+先上代码，也是来源于网上很经典的案例：
+
+class Duck():
+    def walk(self):
+         print('I walk like a duck')
+    def swim(self):
+         print('i swim like a duck')
+
+class Person():
+    def walk(self):
+     　　print('this one walk like a duck') 
+    def swim(self):
+     　　print('this man swim like a duck')
+
+可以很明显的看出，Person类拥有跟Duck类一样的方法，当有一个函数调用Duck类，并利用到了两个方法walk()和swim()。我们传入Person类也一样可以运行，函数并不会检查对象的类型是不是Duck，只要他拥有walk()和swim()方法，就可以正确的被调用。
+
+再举例，如果一个对象实现了getitem方法，那python的解释器就会把它当做一个collection，就可以在这个对象上使用切片，获取子项等方法；如果一个对象实现了iter和next方法，python就会认为它是一个iterator，就可以在这个对象上通过循环来获取各个子项。
